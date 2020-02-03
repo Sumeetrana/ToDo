@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        
+        #checkbox {
+            margin: 20px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            color: green;
+        }
+        p {
+            display: inline;
+        }
+        .buttons {
+            display: inline;
+            float: right;
+            margin-top: 10px;
+            
+        }
+        
+        .tasks {
+            border-bottom: 1px solid #777777;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 offset-md-3" style="margin-top: 25px; padding: 20px">
+            <h3 style="display: inline-block; margin-top: 10px;">Tasks List</h3>
+            <a href="/" class="btn btn-primary" style="float: right; margin-top: 10px;">Add new task</a>
+            
+            <hr>
+                
+                    <% task.forEach((i) => { %>
+                        <!-- <tr>
+                            <td><%= i.taskName %></td>
+                            
+                        </tr> -->
+                        <!-- <div style="margin: 10px;">
+                            <div style="display: inline-block;">
+                                <%= i.taskName %>
+                            </div >
+                            <div style="display: inline;float: right;">
+                                <a href="/<%= i._id %>" class="btn btn-info">Edit</a>
+                                <a href="/delete/<%= i._id %>" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div> -->
+                        <div class="tasks">
+                            <!-- <input type="checkbox" name="" id="checkbox"> -->
+                            <div class="checkbox" style="display: inline">
+                                <!-- <%= i %> -->
+                                <label><input type="checkbox" name="donelist" id="checkbox" ></label>
+                              </div>
+                            <p class="taskName"><%= i.taskName %></p>
+                            <div class="buttons">
+                                <a href="/<%= i._id %>" type="button" id="modalEdit" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">
+                                    Edit
+                                </a>
+                                <a href="/delete/<%= i._id %>" type="button" id="modalEdit" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3">
+                                    Delete
+                                </a>
+                            </div>
+                        </div>
+                        
+                    <% }) %>
+               
+        </div>
+    </div>
+    
+</body>
+</html>
